@@ -1,0 +1,98 @@
+body {
+  font-family: "Segoe UI", sans-serif;
+  background: #f4f6f8;
+  margin: 0;
+  padding: 20px;
+  text-align: center;
+  min-height: 120vh; /* 150% of viewport height */
+  background: linear-gradient(to bottom, #f8f8fa 0%, #ffffff 100%);
+}
+
+#card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 10px;
+  max-width: 700px;
+  margin: 0px auto;
+}
+
+.card {
+  background-color: #ffffff;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  user-select: none;
+  transition: background-color 0.2s;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+}
+
+.card.flipped {
+  background-color: #001f44;
+  color: white;
+  cursor: default;
+}
+
+#controls {
+  max-width: 700px;
+  margin: 15px auto;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  background-color: #001f44;
+  color: white;
+  transition: background-color 0.3s;
+}
+
+button:hover:not(:disabled) {
+  background-color: #004080;
+}
+
+button:disabled {
+  background-color: #94d3a2;
+  cursor: default;
+}
+
+#subtitle-label, #cefr-label, #score-label, #timer-label {
+  font-weight: bold;
+  margin: 8px;
+  font-size: 16px;
+}
+
+@media (max-width: 480px) {
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 280px;
+    gap: 10px;
+  }
+
+  .card {
+    height: 90px;
+    font-size: 1rem;
+  }
+
+  button {
+    padding: 8px 15px;
+    font-size: 0.9rem;
+  }
+
+  #cefr-label {
+    font-size: 16px;
+  }
+
+  #timer-label, #score-label {
+    font-size: 16px;
+  }
+}
